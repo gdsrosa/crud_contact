@@ -1,0 +1,32 @@
+<div class="container">
+  <%= form_with(model: phone, local: true) do |form| %>
+    <% if phone.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <div id="error_explanation">
+          <h2><%= pluralize(phone.errors.count, "error") %> prohibited this phone from being saved:</h2>
+
+          <ul>
+          <% phone.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="field form-group">
+      <%= form.label :phone %>
+      <%= form.text_field :phone, id: :phone_phone, class:"form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :contact_id %>
+      <%= form.text_field :contact_id, id: :phone_contact_id, class:"form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Add Phone", class:"btn btn-primary" %>
+      <%= link_to 'Back', phones_path, class:"btn btn-dark" %>   
+    </div>
+  <% end %>
+</div>

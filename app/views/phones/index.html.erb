@@ -1,0 +1,34 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<h1>Phones</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Phone</th>
+      <th>Contact</th>
+      <th>Action to See</th>
+      <th>Action to Update</th>
+      <th>Action to Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @phones.each do |phone| %>
+      <tr>
+        <td><%= phone.phone %></td>
+        <td><%= phone.contact.name %></td>
+        <td><%= link_to 'See More', phone, class:"btn btn-success" %></td>
+        <td><%= link_to 'Update', edit_phone_path(phone), class:"btn btn-warning" %></td>
+        <td><%= link_to 'Delete', phone, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Phone', new_phone_path, class:"btn btn-primary" %> |
+<%= link_to 'Back', root_path, class:"btn btn-dark" %>
+</div>

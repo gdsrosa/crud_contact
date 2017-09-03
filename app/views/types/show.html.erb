@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Action to Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @type.description %></td>
+        <td><%= link_to 'Update', edit_type_path(@type), class:"btn btn-warning" %></td>
+      </tr>
+    </tbody>
+  </table> 
+  <%= link_to 'Back', types_path, class:"btn btn-dark"%>
+</div>
+

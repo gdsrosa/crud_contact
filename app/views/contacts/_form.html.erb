@@ -1,0 +1,52 @@
+<div class="container">
+
+  <%= form_with(model: contact, local: true) do |form| %>
+    <% if contact.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+        <ul>
+        <% contact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field form-group ">
+      <%= form.label "Name:" %>
+      <%= form.text_field :name, id: :contact_name, class:"form-control" %>
+    </div>
+
+    <div class="field form-group ">
+      <%= form.label "Email:" %>
+      <%= form.text_field :email, id: :contact_email, class:"form-control" %>
+    </div>
+
+    <div class="field form-group ">
+      <%= form.label "Type:" %>
+      <%= collection_select(:contact, :type_id, @type_options_select, :id, :description, {}, {class:"btn btn-light dropdown-toggle"}) %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.fields_for :address do |address_fields| %>
+        <%= address_fields.label "Street:"%> 
+        <%= address_fields.text_field :street, class:"form-group form-control" %>
+        <%= address_fields.label "City:"%>
+        <%= address_fields.text_field :city, class:"form-group form-control" %>
+        <%= address_fields.label "State:"%>
+        <%= address_fields.select :state, options_for_states(@contact.address.state), {} , class:"btn btn-light dropdown-toggle" %>
+      <% end %>
+    </div>
+
+    <div class="field form-group ">
+      <%= form.label "Rmk:" %>
+      <%= form.text_area :rmk, id: :contact_rmk, class:"form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Register", class:"btn btn-primary" %>
+      <%= link_to 'Back', contacts_path, class:"btn btn-success" %>
+    </div>
+  <% end %>
+</div>
