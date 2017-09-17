@@ -39,6 +39,8 @@ gem 'sprockets-rails', '~> 3.2'
 gem 'faker'
 gem 'cocoon'
 gem 'kaminari'
+gem 'bundler', '>= 1.8.4'
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
