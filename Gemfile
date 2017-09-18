@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.3.1'
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -41,6 +41,7 @@ gem 'cocoon'
 gem 'kaminari'
 gem 'bundler', '>= 1.8.4'
 gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
