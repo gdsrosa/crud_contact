@@ -218,7 +218,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap (~> 4.0.0.beta)
-  bundler (>= 1.8.4)
+  bundler (~> 1.15, >= 1.15.4)
   byebug
   capybara (~> 2.13)
   cocoon

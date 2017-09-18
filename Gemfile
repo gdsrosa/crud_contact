@@ -38,7 +38,6 @@ gem 'sprockets-rails', '~> 3.2'
 gem 'faker'
 gem 'cocoon'
 gem 'kaminari'
-gem 'bundler', '>= 1.8.4'
 gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 gem 'rails_12factor', group: :production
 gem 'bundler', '~> 1.15', '>= 1.15.4'
